@@ -47,7 +47,7 @@ export const Clientes = ()=>{
 
     return (
         <div className="h-lvh w-full flex">
-            <div className="w-1/5 h-100% bg-amber-100"></div>
+            <div className="w-1/5 h-100%"></div>
             {/* CONTENT HERE */}
             <div className="w-3/5 h-100% flex justify-center p-4 gap-4 flex-col">
                 <ModalForm titulo="Crear cliente" campos={["nombre", "apellido", "email", "contraseña"]} method={"POST"} />
@@ -64,7 +64,7 @@ export const Clientes = ()=>{
                         onChange={(e) => setFilterText(e.target.value)}
                     />
 
-                    <DataTable
+                    <DataTable className="border"
                         title="Lista de Clientes"
                         columns={columns}
                         data={filteredData}
@@ -80,7 +80,7 @@ export const Clientes = ()=>{
                     </button>
                 </div>
             </div>
-            <div className="w-1/5 h-100% bg-amber-100"></div>
+            <div className="w-1/5 h-100%"></div>
         </div>
     )
 }

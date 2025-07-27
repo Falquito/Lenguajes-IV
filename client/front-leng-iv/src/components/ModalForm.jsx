@@ -170,7 +170,7 @@ export const ModalForm = ({ campos = [], titulo ,method}) => {
 
     return (
         <>
-            <button className="btn" onClick={() => document.getElementById(`${titulo}`).showModal()}>
+            <button className="btn rounded-4xl bg-orange-500 text-white" onClick={() => document.getElementById(`${titulo}`).showModal()}>
                 {titulo}
             </button>
             <dialog id={titulo} className="modal">

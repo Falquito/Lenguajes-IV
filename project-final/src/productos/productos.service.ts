@@ -49,4 +49,14 @@ export class ProductosService {
     return await this.productoRepository.save(product)
 
   }
+
+
+  async updateDiscount(objForm){
+    const {descuento} = objForm
+    return await this.productoRepository
+    .createQueryBuilder()
+    .update()
+    .set({ descuento })
+    .execute();
+  }
 }

@@ -22,5 +22,7 @@ export class Producto {
 
     @Column("bool",{default:true})
     IsActive:boolean
+    @Column("int",{default:0})
+    descuento:number
     
 }

@@ -27,6 +27,12 @@ export class ProductosController {
     return this.productosService.update(id, updateProductoDto);
   }
 
+  @Patch()
+  updateDiscount(@Body() objForm){
+    console.log(objForm)
+    return this.productosService.updateDiscount(objForm)
+  }
+
   @Delete(':id')
   softRemove(@Param('id',ParseIntPipe) id: number) {
     return this.productosService.softRemove(id);

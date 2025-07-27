@@ -3,3 +3,6 @@
 @import 'datatables.net-dt';
 
 
+.body{
+    background-color: black;
+}

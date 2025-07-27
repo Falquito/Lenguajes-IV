@@ -4,6 +4,7 @@ import DataTable from "react-data-table-component";
 import jsPDF from "jspdf";
 import { useContext, useState } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import { ModuleDescuentos } from "../components/modalDesc";
 
 export const Productos = ()=>{
     const columns = [
@@ -31,6 +32,10 @@ export const Productos = ()=>{
           name: "Descripción",
           selector: (row) => row.descripcion,
         },
+        {
+          name: "descuento",
+          selector: (row) => row.descuento,
+        }
       ];
       
       const {productos} = useContext(GlobalContext)
@@ -58,13 +63,14 @@ export const Productos = ()=>{
 
     return (
         <div className="h-lvh w-full flex">
-            <div className="w-1/5 h-100% bg-amber-100"></div>
+            <div className="w-1/5 h-100"></div>
             {/* CONTENT HERE */}
             <div className="w-3/5 h-100% flex justify-center p-4 gap-4 flex-col">
                 <ModalForm titulo="Crear producto" campos={["nombre", "precio", "stock", "categoria", "descripcion"]} method={"POST"} />
 
                 <ModalForm titulo={"Editar producto"} campos={["Numero de producto","nombre", "precio", "stock", "categoria", "descripcion"]} method={"PATCH"}></ModalForm>
                 <ModalForm titulo={"Eliminar producto"} campos={["Numero de producto"]} method={"DELETE"} ></ModalForm>
+                <ModuleDescuentos></ModuleDescuentos>
 
                 <div className="p-4">
                     <input
@@ -76,7 +82,7 @@ export const Productos = ()=>{
                     />
 
 
-                    <DataTable
+                    <DataTable className="border"
                         title="Lista de Productos"
                         columns={columns}
                         data={filteredData}
@@ -92,7 +98,7 @@ export const Productos = ()=>{
                     </button>
                 </div>
             </div>
-            <div className="w-1/5 h-100% bg-amber-100"></div>
+            <div className="w-1/5 h-100% "></div>
         </div>
     )
 }

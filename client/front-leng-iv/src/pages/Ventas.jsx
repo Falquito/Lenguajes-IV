@@ -53,7 +53,7 @@ export const Ventas = ()=>{
 
     return (
         <div className="h-lvh w-full flex">
-            <div className="w-1/5 h-100% bg-amber-100"></div>
+            <div className="w-1/5 h-100%"></div>
             {/* CONTENT HERE */}
             <div className="w-3/5 h-100% flex justify-center p-4 gap-4 flex-col">
                 <ModalForm titulo="Crear orden" campos={["cliente email", "fecha", "productos", "total"]} method={"POST"} />
@@ -62,7 +62,7 @@ export const Ventas = ()=>{
                 <ModalForm titulo={"Eliminar orden"} campos={["Numero de orden"]} method={"DELETE"} ></ModalForm>
 
                 <div className="p-4">
-                    <DataTable
+                    <DataTable className="border"
                         title="Lista de Ventas"
                         columns={columns}
                         data={filteredData}
@@ -78,7 +78,7 @@ export const Ventas = ()=>{
                     </button>
                 </div>
             </div>
-            <div className="w-1/5 h-100% bg-amber-100"></div>
+            <div className="w-1/5 h-100% "></div>
         </div>
     )
 }

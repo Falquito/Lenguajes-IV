@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import { VentasPDF } from "../components/VentasPDF";
+import { VentasPDF } from "./components/VentasPDF";
 
 export const BotonDescargaPDF = ({ ventas }) => {
   const documentoPDF = useMemo(() => <VentasPDF ventas={ventas} />, [ventas]);
